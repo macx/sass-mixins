@@ -54,7 +54,7 @@ gulp.task('bump', function () {
 
   // add and commit changes to the repository
   gulp.src('./*')
-    .pipe(git.add({args: '--all'}))
+    .pipe(git.add({args: '-f --all'}))
     .pipe(git.commit('v' + newVersion))
     .pipe(git.tag('v' + newVersion, 'v' + newVersion, function (err) {
       if(err) {
