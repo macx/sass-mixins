@@ -1,0 +1,31 @@
+{
+  "name": "macx-sass-mixins",
+  "version": "0.1.0",
+  "description": "SASS Mixins",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/macx/sass-mixins.git"
+  },
+  "keywords": [
+    "sass",
+    "scss",
+    "mixins"
+  ],
+  "author": "David Maciejewski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/macx/sass-mixins/issues"
+  },
+  "homepage": "https://github.com/macx/sass-mixins",
+  "dependencies": {
+    "gulp-bump": "^0.1.11"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-sass": "^1.0.0"
+  }
+}

@@ -1,0 +1,25 @@
+// IE fix, because the stupid browser
+// dont't want to read meta tags.
+@-ms-viewport {
+  width: device-width;
+}
+
+@mixin col($col, $max-cols: 12) {
+  width: (100%/$max-cols)*$col;
+}
+
+@mixin col-push($col, $max-cols: 12) {
+  margin-left: (100% / $max-cols) * $col;
+}
+
+@mixin col-pull($col, $max-cols: 12) {
+  margin-right: (100% / $max-cols) * $col;
+}
+
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

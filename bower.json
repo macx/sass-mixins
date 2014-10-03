@@ -1,0 +1,25 @@
+{
+  "name": "macx-sass-mixins",
+  "version": "0.1.0",
+  "homepage": "https://github.com/macx/sass-mixins",
+  "authors": [
+    "David Maciejewski <hello@macx.io>"
+  ],
+  "description": "SASS Mixins for responsive layouts",
+  "main": "src/sass-mixins.scss",
+  "keywords": [
+    "sass",
+    "scss",
+    "mixins",
+    "responsive",
+    "layout"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
