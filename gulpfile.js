@@ -30,7 +30,11 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(conf.test + '/'));
 });
 
-gulp.task('bump', function () {
+/**
+ * Release Task
+ * @usage gulp release --type patch|minor|major
+ */
+gulp.task('release', ['default'], function () {
   // load dependencies
   var semver = require('semver'),
       gutil  = require('gulp-util');
@@ -44,6 +48,11 @@ gulp.task('bump', function () {
     return false;
   }
 
+  var version = 'v' + newVersion,
+      message = 'Release ' + version;
+
+  gutil.log(gutil.colors.green('Release ' + version));
+
   // bump the version to local files
   gulp.src(['./bower.json', './package.json'])
     .pipe(bump({
@@ -53,19 +62,18 @@ gulp.task('bump', function () {
     .pipe(gulp.dest('./'));
 
   // add and commit changes to the repository
-  gulp.src('./*')
+  return gulp.src('./*')
     .pipe(git.add({args: '-f --all'}))
-    .pipe(git.commit('v' + newVersion))
-    .pipe(git.tag('v' + newVersion, 'v' + newVersion, function (err) {
-      if(err) {
-        throw err;
-      }
-    }))
-    .pipe(git.push('origin', 'master', function (err) {
-      if(err) {
-        throw err;
-      }
-    }));
+    .pipe(git.commit(message))
+    .pipe(gulp.dest('./'));
+  /*
+  return gulp.src('./*')
+    .pipe(git.add({args: '-f --all'}))
+    .pipe(git.commit(message))
+    .pipe(git.tag(version, message))
+    .pipe(git.push('origin', 'master', {args: '--tags'}))
+    .pipe(gulp.dest('./'));
+   */
 });
 
 // Default Task
@@ -74,8 +82,3 @@ gulp.task('default', [
   'sass'
 ]);
 
-// Release Task
-gulp.task('release', [
-  'default',
-  'bump'
-]);
