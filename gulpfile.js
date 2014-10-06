@@ -63,13 +63,9 @@ gulp.task('release', ['default'], function () {
   return gulp.src('./')
     .pipe(git.add({args: '-f --all'}))
     .pipe(git.commit(message))
-    // .pipe(git.tag(version, message))
+    .pipe(function () {return git.tag(version, message)})
     .pipe(git.push('origin', 'master', {args: '--tags'}))
     .pipe(gulp.dest('./'));
-});
-
-gulp.task('foobar', function () {
-  gulp.src('./*')
 });
 
 // Default Task
