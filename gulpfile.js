@@ -51,8 +51,6 @@ gulp.task('release', ['default'], function () {
   var version = 'v' + newVersion,
       message = 'Release ' + version;
 
-  gutil.log(gutil.colors.green('Release ' + version));
-
   // bump the version to local files
   gulp.src(['./bower.json', './package.json'])
     .pipe(bump({
@@ -62,18 +60,16 @@ gulp.task('release', ['default'], function () {
     .pipe(gulp.dest('./'));
 
   // add and commit changes to the repository
-  return gulp.src('./*')
+  return gulp.src('./')
     .pipe(git.add({args: '-f --all'}))
     .pipe(git.commit(message))
-    .pipe(gulp.dest('./'));
-  /*
-  return gulp.src('./*')
-    .pipe(git.add({args: '-f --all'}))
-    .pipe(git.commit(message))
-    .pipe(git.tag(version, message))
+    // .pipe(git.tag(version, message))
     .pipe(git.push('origin', 'master', {args: '--tags'}))
     .pipe(gulp.dest('./'));
-   */
+});
+
+gulp.task('foobar', function () {
+  gulp.src('./*')
 });
 
 // Default Task
