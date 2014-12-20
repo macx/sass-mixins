@@ -1,6 +1,6 @@
 {
   "name": "macx-sass-mixins",
-  "version": "v0.1.6",
+  "version": "v0.1.7",
   "description": "SASS Mixins",
   "main": "index.js",
   "scripts": {

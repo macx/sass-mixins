@@ -1,10 +1,10 @@
 /**
  * Set Breakpoints
  */
-$layout-max-width: 1200px;
-$layout-max-columns: 12;
+$layout-max-width: 1200px !default;
+$layout-max-columns: 12 !default;
 $layout-gutter-width: percentage(20px/$layout-max-width);
-$layout-spacing: 10px;
+$layout-spacing: 10px !default;
 $layout-breakpoints: (
   'small' 480px,
   'medium' 600px,
