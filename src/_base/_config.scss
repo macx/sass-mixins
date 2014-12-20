@@ -5,9 +5,12 @@ $layout-max-width: 1200px !default;
 $layout-max-columns: 12 !default;
 $layout-gutter-width: percentage(20px/$layout-max-width) !default;
 $layout-spacing: 10px !default;
-$layout-breakpoints: (
-  'small' 480px,
-  'medium' 600px,
-  'large' 920px,
-  'xlarge' $layout-max-width
-) !default;
+
+@if not variable-exists(layout-breakpoints) {
+  $layout-breakpoints: (
+    'small' 480px,
+    'medium' 600px,
+    'large' 920px,
+    'xlarge' $layout-max-width
+  );
+}
