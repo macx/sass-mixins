@@ -7,16 +7,16 @@
 // A little more complicated than previous respond-to mixins, but now runs off of a variable. This is also Rev 1 so if someone can help me make it better, I'm all ears.
 // We need to start with a defaulted breakpoints variable.
 
-$breakpoints: false !default;
+$layout-breakpoints: false !default;
 
 @mixin respond-to($context) {
-  @if $breakpoints != false {
+  @if $layout-breakpoints != false {
     // Check to see if the 2nd item is a number. If it is, we've got a single query
-    @if type-of(nth($breakpoints, 2)) == 'number' {
+    @if type-of(nth($layout-breakpoints, 2)) == 'number' {
       // Check to see if the context matches the breakpoint namespace
-      @if $context == nth($breakpoints, 1) {
+      @if $context == nth($layout-breakpoints, 1) {
         // Call Media Query Generator
-        @include media-query-gen($breakpoints) {
+        @include media-query-gen($layout-breakpoints) {
           @content;
         }
       }
@@ -24,7 +24,7 @@ $breakpoints: false !default;
     // Else, loop over all of them
     @else {
       // Loop over each breakpoint and check context
-      @each $bkpt in $breakpoints {
+      @each $bkpt in $layout-breakpoints {
         // If context is correct
         @if $context == nth($bkpt, 1) {
           // Call the generator!
