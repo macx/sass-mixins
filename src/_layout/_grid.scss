@@ -47,19 +47,18 @@
 
   @for $sum from 1 through $layout-max-columns {
     @for $i from 1 through $sum {
-
-      .l-u--#{$breakpoint}-#{$i}-#{$sum} {
-        @include respond-to(quote(#{$breakpoint})) {
+      @include respond-to(quote(#{$breakpoint})) {
+        .l-u--#{$breakpoint}-#{$i}-#{$sum} {
           @include col($i, $sum);
         }
-      }
 
-      .l-u-push--#{$breakpoint}-#{$i}-#{$sum} {
-        @include col-push($i, $sum);
-      }
+        .l-u-push--#{$breakpoint}-#{$i}-#{$sum} {
+          @include col-push($i, $sum);
+        }
 
-      .l-u-pull--#{$breakpoint}-#{$i}-#{$sum} {
-        @include col-pull($i, $sum);
+        .l-u-pull--#{$breakpoint}-#{$i}-#{$sum} {
+          @include col-pull($i, $sum);
+        }
       }
     }
   }
