@@ -24,19 +24,17 @@
 }
 
 // Mobile First Columns
-@for $sum from 1 through $layout-max-columns {
-  @for $i from 1 through $sum {
-    .l-u--#{$i}-#{$sum} {
-      @include col($i, $sum);
-    }
+@for $i from 1 through $layout-max-columns {
+  .l-u--#{$i}-#{$layout-max-columns} {
+    @include col($i, $layout-max-columns);
+  }
 
-    .l-u-push--#{$i}-#{$sum} {
-      @include col-push($i, $sum);
-    }
+  .l-u-push--#{$i}-#{$layout-max-columns} {
+    @include col-push($i, $layout-max-columns);
+  }
 
-    .l-u-pull--#{$i}-#{$sum} {
-      @include col-pull($i, $sum);
-    }
+  .l-u-pull--#{$i}-#{$layout-max-columns} {
+    @include col-pull($i, $layout-max-columns);
   }
 }
 
@@ -45,20 +43,18 @@
   $breakpoint: nth($bp, 1);
   $size: nth($bp, 2);
 
-  @for $sum from 1 through $layout-max-columns {
-    @for $i from 1 through $sum {
-      @include respond-to(quote(#{$breakpoint})) {
-        .l-u--#{$breakpoint}-#{$i}-#{$sum} {
-          @include col($i, $sum);
-        }
+  @for $i from 1 through $layout-max-columns {
+    @include respond-to(quote(#{$breakpoint})) {
+      .l-u--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
+        @include col($i, $layout-max-columns);
+      }
 
-        .l-u-push--#{$breakpoint}-#{$i}-#{$sum} {
-          @include col-push($i, $sum);
-        }
+      .l-u-push--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
+        @include col-push($i, $layout-max-columns);
+      }
 
-        .l-u-pull--#{$breakpoint}-#{$i}-#{$sum} {
-          @include col-pull($i, $sum);
-        }
+      .l-u-pull--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
+        @include col-pull($i, $layout-max-columns);
       }
     }
   }
