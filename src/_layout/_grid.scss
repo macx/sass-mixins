@@ -29,33 +29,33 @@
     @include col($i, $layout-max-columns);
   }
 
-  .l-u-push--#{$i}-#{$layout-max-columns} {
-    @include col-push($i, $layout-max-columns);
+  @if $i < $layout-max-columns {
+    .l-u-push--#{$i}-#{$layout-max-columns} {
+      @include col-push($i, $layout-max-columns);
+    }
+
+    .l-u-pull--#{$i}-#{$layout-max-columns} {
+      @include col-pull($i, $layout-max-columns);
+    }
   }
 
-  .l-u-pull--#{$i}-#{$layout-max-columns} {
-    @include col-pull($i, $layout-max-columns);
-  }
-}
+  // Breakpoints
+  @each $breakpoint, $size in $layout-breakpoints {
+    @if $i < $layout-max-columns {
+      @include respond(quote(#{$breakpoint})) {
+        .l-u--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
+          @include col($i, $layout-max-columns);
+        }
 
-// Breakpoints
-@each $bp in $layout-breakpoints {
-  $breakpoint: nth($bp, 1);
-  $size: nth($bp, 2);
+        .l-u-push--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
+          @include col-push($i, $layout-max-columns);
+        }
 
-  @for $i from 1 through $layout-max-columns {
-    @include respond-to(quote(#{$breakpoint})) {
-      .l-u--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
-        @include col($i, $layout-max-columns);
-      }
-
-      .l-u-push--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
-        @include col-push($i, $layout-max-columns);
-      }
-
-      .l-u-pull--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
-        @include col-pull($i, $layout-max-columns);
+        .l-u-pull--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
+          @include col-pull($i, $layout-max-columns);
+        }
       }
     }
   }
 }
+

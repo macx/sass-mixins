@@ -16,6 +16,22 @@
   margin-right: (100% / $max-cols) * $col;
 }
 
+@mixin respond($breakpoint, $type: 'from') {
+  @if $type == 'from' {
+    @media screen and (min-width: map-get($layout-breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else if $type == 'to' {
+    @media screen and (max-width: map-get($layout-breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+@mixin respond_to($breakpoint) {
+  @include respond($breakpoint);
+}
+
 @mixin clearfix() {
   &:after {
     content: '';

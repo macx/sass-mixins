@@ -25,9 +25,9 @@
   "devDependencies": {
     "gulp": "^3.8.8",
     "gulp-bump": "^0.1.11",
-    "gulp-git": "^0.5.2",
+    "gulp-git": "^0.5.5",
     "gulp-jshint": "^1.8.5",
-    "gulp-sass": "^1.0.0",
+    "gulp-sass": "^1.2.4",
     "gulp-util": "^3.0.1",
     "jshint-stylish": "^1.0.0",
     "semver": "^4.0.3"

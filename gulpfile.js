@@ -63,7 +63,7 @@ gulp.task('release', ['default'], function () {
   return gulp.src('./')
     .pipe(git.add({args: '-f --all'}))
     .pipe(git.commit(message))
-    // .pipe(git.tag(version, message))
+    // .pipe(gitcho.tag(version, message))
     .pipe(git.push('origin', 'master', {args: '--tags'}))
     .pipe(gulp.dest('./'));
 });
