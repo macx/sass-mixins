@@ -34,6 +34,99 @@
 .l-u-pull--1-12 {
   margin-right: 8.33333%; }
 
+.l-u--2-12 {
+  width: 16.66667%; }
+
+.l-u-push--2-12 {
+  margin-left: 16.66667%; }
+
+.l-u-pull--2-12 {
+  margin-right: 16.66667%; }
+
+.l-u--3-12 {
+  width: 25%; }
+
+.l-u-push--3-12 {
+  margin-left: 25%; }
+
+.l-u-pull--3-12 {
+  margin-right: 25%; }
+
+.l-u--4-12 {
+  width: 33.33333%; }
+
+.l-u-push--4-12 {
+  margin-left: 33.33333%; }
+
+.l-u-pull--4-12 {
+  margin-right: 33.33333%; }
+
+.l-u--5-12 {
+  width: 41.66667%; }
+
+.l-u-push--5-12 {
+  margin-left: 41.66667%; }
+
+.l-u-pull--5-12 {
+  margin-right: 41.66667%; }
+
+.l-u--6-12 {
+  width: 50%; }
+
+.l-u-push--6-12 {
+  margin-left: 50%; }
+
+.l-u-pull--6-12 {
+  margin-right: 50%; }
+
+.l-u--7-12 {
+  width: 58.33333%; }
+
+.l-u-push--7-12 {
+  margin-left: 58.33333%; }
+
+.l-u-pull--7-12 {
+  margin-right: 58.33333%; }
+
+.l-u--8-12 {
+  width: 66.66667%; }
+
+.l-u-push--8-12 {
+  margin-left: 66.66667%; }
+
+.l-u-pull--8-12 {
+  margin-right: 66.66667%; }
+
+.l-u--9-12 {
+  width: 75%; }
+
+.l-u-push--9-12 {
+  margin-left: 75%; }
+
+.l-u-pull--9-12 {
+  margin-right: 75%; }
+
+.l-u--10-12 {
+  width: 83.33333%; }
+
+.l-u-push--10-12 {
+  margin-left: 83.33333%; }
+
+.l-u-pull--10-12 {
+  margin-right: 83.33333%; }
+
+.l-u--11-12 {
+  width: 91.66667%; }
+
+.l-u-push--11-12 {
+  margin-left: 91.66667%; }
+
+.l-u-pull--11-12 {
+  margin-right: 91.66667%; }
+
+.l-u--12-12 {
+  width: 100%; }
+
 @media screen and (min-width: 480px) {
   .l-u--small-1-12 {
     width: 8.33333%; }
@@ -77,15 +170,6 @@
   .l-u-pull--xlarge-1-12 {
     margin-right: 8.33333%; }
  }
-
-.l-u--2-12 {
-  width: 16.66667%; }
-
-.l-u-push--2-12 {
-  margin-left: 16.66667%; }
-
-.l-u-pull--2-12 {
-  margin-right: 16.66667%; }
 
 @media screen and (min-width: 480px) {
   .l-u--small-2-12 {
@@ -131,15 +215,6 @@
     margin-right: 16.66667%; }
  }
 
-.l-u--3-12 {
-  width: 25%; }
-
-.l-u-push--3-12 {
-  margin-left: 25%; }
-
-.l-u-pull--3-12 {
-  margin-right: 25%; }
-
 @media screen and (min-width: 480px) {
   .l-u--small-3-12 {
     width: 25%; }
@@ -183,15 +258,6 @@
   .l-u-pull--xlarge-3-12 {
     margin-right: 25%; }
  }
-
-.l-u--4-12 {
-  width: 33.33333%; }
-
-.l-u-push--4-12 {
-  margin-left: 33.33333%; }
-
-.l-u-pull--4-12 {
-  margin-right: 33.33333%; }
 
 @media screen and (min-width: 480px) {
   .l-u--small-4-12 {
@@ -237,15 +303,6 @@
     margin-right: 33.33333%; }
  }
 
-.l-u--5-12 {
-  width: 41.66667%; }
-
-.l-u-push--5-12 {
-  margin-left: 41.66667%; }
-
-.l-u-pull--5-12 {
-  margin-right: 41.66667%; }
-
 @media screen and (min-width: 480px) {
   .l-u--small-5-12 {
     width: 41.66667%; }
@@ -289,15 +346,6 @@
   .l-u-pull--xlarge-5-12 {
     margin-right: 41.66667%; }
  }
-
-.l-u--6-12 {
-  width: 50%; }
-
-.l-u-push--6-12 {
-  margin-left: 50%; }
-
-.l-u-pull--6-12 {
-  margin-right: 50%; }
 
 @media screen and (min-width: 480px) {
   .l-u--small-6-12 {
@@ -343,15 +391,6 @@
     margin-right: 50%; }
  }
 
-.l-u--7-12 {
-  width: 58.33333%; }
-
-.l-u-push--7-12 {
-  margin-left: 58.33333%; }
-
-.l-u-pull--7-12 {
-  margin-right: 58.33333%; }
-
 @media screen and (min-width: 480px) {
   .l-u--small-7-12 {
     width: 58.33333%; }
@@ -395,15 +434,6 @@
   .l-u-pull--xlarge-7-12 {
     margin-right: 58.33333%; }
  }
-
-.l-u--8-12 {
-  width: 66.66667%; }
-
-.l-u-push--8-12 {
-  margin-left: 66.66667%; }
-
-.l-u-pull--8-12 {
-  margin-right: 66.66667%; }
 
 @media screen and (min-width: 480px) {
   .l-u--small-8-12 {
@@ -449,15 +479,6 @@
     margin-right: 66.66667%; }
  }
 
-.l-u--9-12 {
-  width: 75%; }
-
-.l-u-push--9-12 {
-  margin-left: 75%; }
-
-.l-u-pull--9-12 {
-  margin-right: 75%; }
-
 @media screen and (min-width: 480px) {
   .l-u--small-9-12 {
     width: 75%; }
@@ -501,15 +522,6 @@
   .l-u-pull--xlarge-9-12 {
     margin-right: 75%; }
  }
-
-.l-u--10-12 {
-  width: 83.33333%; }
-
-.l-u-push--10-12 {
-  margin-left: 83.33333%; }
-
-.l-u-pull--10-12 {
-  margin-right: 83.33333%; }
 
 @media screen and (min-width: 480px) {
   .l-u--small-10-12 {
@@ -555,15 +567,6 @@
     margin-right: 83.33333%; }
  }
 
-.l-u--11-12 {
-  width: 91.66667%; }
-
-.l-u-push--11-12 {
-  margin-left: 91.66667%; }
-
-.l-u-pull--11-12 {
-  margin-right: 91.66667%; }
-
 @media screen and (min-width: 480px) {
   .l-u--small-11-12 {
     width: 91.66667%; }
@@ -607,6 +610,3 @@
   .l-u-pull--xlarge-11-12 {
     margin-right: 91.66667%; }
  }
-
-.l-u--12-12 {
-  width: 100%; }

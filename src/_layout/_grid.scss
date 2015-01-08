@@ -38,7 +38,10 @@
       @include col-pull($i, $layout-max-columns);
     }
   }
+}
 
+// Mobile First Columns
+@for $i from 1 through $layout-max-columns {
   // Breakpoints
   @each $breakpoint, $size in $layout-breakpoints {
     @if $i < $layout-max-columns {
