@@ -48,12 +48,14 @@
         @include col($i, $layout-max-columns);
       }
 
-      .l-u-push--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
-        @include col-push($i, $layout-max-columns);
-      }
+      @if $i < $layout-max-columns {
+        .l-u-push--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
+          @include col-push($i, $layout-max-columns);
+        }
 
-      .l-u-pull--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
-        @include col-pull($i, $layout-max-columns);
+        .l-u-pull--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
+          @include col-pull($i, $layout-max-columns);
+        }
       }
     }
   }
