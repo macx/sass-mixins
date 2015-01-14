@@ -3,10 +3,18 @@
   "version": "v0.2.3",
   "homepage": "https://github.com/macx/sass-mixins",
   "authors": [
-    "David Maciejewski <hello@macx.io>"
+    {
+      "name": "David Maciejewski",
+      "email": "hello@macx.io",
+      "homepage": "http://macx.io"
+    }
   ],
-  "description": "SASS Mixins for responsive layouts",
+  "description": "Mobile first Sass Mixins - based on simplicity",
   "main": "src/sass-mixins.scss",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:macx/sass-mixins.git"
+  },
   "keywords": [
     "sass",
     "scss",
@@ -18,8 +26,11 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
+    "vendor",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "labs-defaults": "git@github.com:macx/labs-defaults.git#~0.1.0"
+  }
 }
