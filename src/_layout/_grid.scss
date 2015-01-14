@@ -40,16 +40,15 @@
   }
 }
 
-// Mobile First Columns
-@for $i from 1 through $layout-max-columns {
-  // Breakpoints
-  @each $breakpoint, $size in $layout-breakpoints {
-    @if $i < $layout-max-columns {
-      @include respond(quote(#{$breakpoint})) {
-        .l-u--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
-          @include col($i, $layout-max-columns);
-        }
+// Breakpoints
+@each $breakpoint, $size in $layout-breakpoints {
+  @for $i from 1 through $layout-max-columns {
+    @include respond(quote(#{$breakpoint})) {
+      .l-u--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
+        @include col($i, $layout-max-columns);
+      }
 
+      @if $i < $layout-max-columns {
         .l-u-push--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
           @include col-push($i, $layout-max-columns);
         }
@@ -61,4 +60,3 @@
     }
   }
 }
-
