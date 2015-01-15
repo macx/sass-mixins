@@ -5,7 +5,7 @@
   margin: 0 auto;
   padding: 0 $layout-spacing;
 
-  @include respond-to('large') {
+  @include respond('large') {
     padding: 0 ($layout-spacing * 3);
   }
 }
