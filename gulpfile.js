@@ -73,18 +73,20 @@ gulp.task('release', ['default'], function () {
       message = 'Release ' + version;
 
   // bump the version to local files
-  gulp.src(['./bower.json', './package.json'])
+  gulp.src(['./package.json', './bower.json'])
     .pipe(bump({
-      type:'patch',
-      version: 'v' + newVersion
+      type: bumpType,
+      version: newVersion
     }))
     .pipe(gulp.dest('./'));
 
-  // add and commit changes to the repository
+  // commit changes
   return gulp.src('./')
     .pipe(git.add({args: '-f --all'}))
     .pipe(git.commit(message))
-    // .pipe(gitcho.tag(version, message))
+    .pipe(git.tag(version, message, function (err) {
+      if(err) { throw err; }
+    }))
     .pipe(git.push('origin', 'master', {args: '--tags'}))
     .pipe(gulp.dest('./'));
 });
@@ -100,4 +102,3 @@ gulp.task('serve', [
   'default',
   'browser-sync'
 ]);
-

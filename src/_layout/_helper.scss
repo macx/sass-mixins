@@ -28,6 +28,7 @@
   }
 }
 
+// This is for compatibility reasons
 @mixin respond_to($breakpoint) {
   @include respond($breakpoint);
 }
