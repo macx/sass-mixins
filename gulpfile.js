@@ -81,14 +81,17 @@ gulp.task('release', ['default'], function () {
     .pipe(gulp.dest('./'));
 
   // commit changes
-  return gulp.src('./')
-    .pipe(git.add({args: '-f --all'}))
-    .pipe(git.commit(message))
-    .pipe(git.tag(version, message, function (err) {
-      if(err) { throw err; }
-    }))
-    .pipe(git.push('origin', 'master', {args: '--tags'}))
-    .pipe(gulp.dest('./'));
+  gulp.src('./*')
+    .pipe(git.add({args: '-f -p'}))
+    .pipe(git.commit(message));
+
+  git.tag(version, message, function (err) {
+    if(err) { throw err; }
+  });
+
+  git.push('origin', 'master', {args: '--tags'}, function (err) {
+    if(err) { throw err; }
+  });
 });
 
 // Default Task
