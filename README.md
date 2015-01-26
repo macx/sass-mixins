@@ -1,4 +1,4 @@
-Mobile first Sass Mixins – based on simplicity
+Mobile first Sass Mixins – based on simplicity [![Build Status](https://travis-ci.org/macx/sass-mixins.svg?branch=master)](https://travis-ci.org/macx/sass-mixins)
 ===========
 
 There are a lot of Sass Mixins out there. Most of them are overdone, because
