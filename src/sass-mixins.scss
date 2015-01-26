@@ -1,8 +1,8 @@
 @charset 'UTF-8';
 
 // Base
-@import '_base/_config';
+@import '_base/config';
 
 // Layout
-@import '_layout/_helper',
-        '_layout/_grid';
+@import '_layout/helper',
+        '_layout/grid';

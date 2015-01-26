@@ -5,13 +5,14 @@ var conf = {
   test: 'test'
 };
 
-var gulp = require('gulp'),
+var gulp        = require('gulp'),
     sass        = require('gulp-sass'),
     cssmin      = require('gulp-cssmin'),
     rename      = require('gulp-rename'),
     bump        = require('gulp-bump'),
     git         = require('gulp-git'),
     jshint      = require('gulp-jshint'),
+    scsslint    = require('gulp-scss-lint'),
     browserSync = require('browser-sync'),
     reload      = browserSync.reload;
 
@@ -21,10 +22,19 @@ var getPackageJson = function () {
   return JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 };
 
-gulp.task('lint', function () {
+gulp.task('js-lint', function () {
   gulp.src(['gulpfile.js'])
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'));
+});
+
+gulp.task('scss-lint', function() {
+  gulp.src(conf.src + '/**/*.scss')
+    .pipe(scsslint({
+      'bundleExec': false,
+      'config': '.scss-lint.yml',
+      'reporterOutput': null
+    }));
 });
 
 // Build SASS
@@ -81,22 +91,22 @@ gulp.task('release', ['default'], function () {
     .pipe(gulp.dest('./'));
 
   // commit changes
-  gulp.src('./*')
+  return gulp.src('./')
     .pipe(git.add({args: '-f -p'}))
-    .pipe(git.commit(message));
-
-  git.tag(version, message, function (err) {
-    if(err) { throw err; }
-  });
-
-  git.push('origin', 'master', {args: '--tags'}, function (err) {
-    if(err) { throw err; }
-  });
+    .pipe(git.commit(message))
+    .pipe(git.tag(version, message, function (err) {
+      if(err) { throw err; }
+    }))
+    .pipe(git.push('origin', 'master', { args: '--tags'}, function (err) {
+      if(err) { throw err; }
+    }))
+    .pipe(gulp.dest('./'));
 });
 
 // Default Task
 gulp.task('default', [
-  'lint',
+  'js-lint',
+  'scss-lint',
   'sass',
   'cssmin'
 ]);
