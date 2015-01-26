@@ -23,13 +23,13 @@ var getPackageJson = function () {
 };
 
 gulp.task('js-lint', function () {
-  gulp.src(['gulpfile.js'])
+  return gulp.src(['gulpfile.js'])
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('scss-lint', function() {
-  gulp.src(conf.src + '/**/*.scss')
+  return gulp.src([conf.src + '/**/*.scss'])
     .pipe(scsslint({
       'bundleExec': false,
       'config': '.scss-lint.yml',
