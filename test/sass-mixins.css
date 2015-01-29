@@ -1,6 +1,9 @@
 /**
  * Set Breakpoints
  */
+* {
+  box-sizing: border-box; }
+
 @-ms-viewport {
   width: device-width; }
 
