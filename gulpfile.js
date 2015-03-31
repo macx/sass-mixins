@@ -34,7 +34,8 @@ gulp.task('scss-lint', function() {
       'bundleExec': false,
       'config': '.scss-lint.yml',
       'reporterOutput': null
-    }));
+    }))
+    .pipe(scsslint.failReporter());
 });
 
 // Build SASS

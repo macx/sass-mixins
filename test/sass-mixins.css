@@ -1,12 +1,22 @@
 /**
  * Set Breakpoints
  */
-* {
+*, *:before, *:after {
   box-sizing: border-box; }
 
 @-ms-viewport {
   width: device-width; }
 
+/**
+ * Better font-rendering on OSX
+ * Based on a article Maximilian Hoffmann, this mixin let you turn on
+ * a smooth font-rendering. This particular make sense on dark backgrounds.
+ *
+ * @usage @include font-smoothing(on);
+ *
+ * @example http://codepen.io/macx/full/qmkje
+ * @since 0.1.13
+ */
 .l-constrained {
   max-width: 1200px;
   margin: 0 auto;
