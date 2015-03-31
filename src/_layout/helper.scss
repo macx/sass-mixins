@@ -36,7 +36,7 @@
  * @usage @include font-smoothing(on);
  *
  * @example http://codepen.io/macx/full/qmkje
- * @since 0.1.13
+ * @since 0.2.7
  */
 @mixin font-smoothing($value: on) {
   @if $value == on {
