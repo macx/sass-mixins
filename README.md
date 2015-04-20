@@ -15,6 +15,8 @@ to do the trick.
 
 * Highly flexible Grid with push and pull methods based on your configuration
 * Effective Respond-Mixin to set `@media triggers (from, to)
+* font-smoothing Mixing for better font rendering on dark backgrounds
+* asset module for flexible floating objects
 * clearfix
 
 ## Installation
