@@ -510,3 +510,17 @@
 @media screen and (min-width: 1200px) {
   .l-u--xlarge-12-12 {
     width: 100%; } }
+
+.m-asset {
+  display: inline-block;
+  vertical-align: top; }
+  .m-asset > img, .m-asset > figure {
+    display: inline-block;
+    float: left;
+    margin: .1em 1em 1em 0; }
+  .m-asset > div {
+    overflow: hidden; }
+
+.m-asset--right > img, .m-asset--right > figure {
+  float: right;
+  margin: .1em 0 1em 1em; }

@@ -1,0 +1,23 @@
+.m-asset {
+  display: inline-block;
+  vertical-align: top;
+
+  > img,
+  > figure {
+    display: inline-block;
+    float: left;
+    margin: .1em 1em 1em 0;
+   }
+
+  > div {
+    overflow: hidden;
+  }
+}
+
+.m-asset--right {
+  > img,
+  > figure {
+    float: right;
+    margin: .1em 0 1em 1em;
+  }
+}
