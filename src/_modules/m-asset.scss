@@ -1,13 +1,11 @@
 .m-asset {
-  display: inline-block;
   vertical-align: top;
 
-  > img,
-  > figure {
+  .m-asset__object {
     display: inline-block;
     float: left;
     margin: .1em 1em 1em 0;
-   }
+  }
 
   > div {
     overflow: hidden;
@@ -15,8 +13,7 @@
 }
 
 .m-asset--right {
-  > img,
-  > figure {
+  .m-asset__object {
     float: right;
     margin: .1em 0 1em 1em;
   }

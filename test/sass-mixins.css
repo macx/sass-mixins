@@ -512,15 +512,14 @@
     width: 100%; } }
 
 .m-asset {
-  display: inline-block;
   vertical-align: top; }
-  .m-asset > img, .m-asset > figure {
+  .m-asset .m-asset__object {
     display: inline-block;
     float: left;
     margin: .1em 1em 1em 0; }
   .m-asset > div {
     overflow: hidden; }
 
-.m-asset--right > img, .m-asset--right > figure {
+.m-asset--right .m-asset__object {
   float: right;
   margin: .1em 0 1em 1em; }
