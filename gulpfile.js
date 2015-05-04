@@ -16,6 +16,8 @@ var gulp        = require('gulp'),
     browserSync = require('browser-sync'),
     reload      = browserSync.reload;
 
+require('gulp-release-tasks')(gulp);
+
 var getPackageJson = function () {
   var fs = require('fs');
 
@@ -60,48 +62,6 @@ gulp.task('browser-sync', function () {
       baseDir: 'test/'
     }
   });
-});
-
-/**
- * Release Task
- * @usage gulp release --type patch|minor|major
- */
-gulp.task('release', ['default'], function () {
-  // load dependencies
-  var semver = require('semver'),
-      gutil  = require('gulp-util');
-
-  var bumpType   = gutil.env.type || 'patch',
-      pkg        = getPackageJson(),
-      newVersion = semver.inc(pkg.version, bumpType);
-
-  if(!newVersion) {
-    gutil.log(gutil.colors.red('Please choose a valid type: patch, minor or major'));
-    return false;
-  }
-
-  var version = 'v' + newVersion,
-      message = 'Release ' + version;
-
-  // bump the version to local files
-  gulp.src(['./package.json', './bower.json'])
-    .pipe(bump({
-      type: bumpType,
-      version: newVersion
-    }))
-    .pipe(gulp.dest('./'));
-
-  // commit changes
-  return gulp.src('./')
-    .pipe(git.add({args: '-f -p'}))
-    .pipe(git.commit(message))
-    .pipe(git.tag(version, message, function (err) {
-      if(err) { throw err; }
-    }))
-    .pipe(git.push('origin', 'master', { args: '--tags'}, function (err) {
-      if(err) { throw err; }
-    }))
-    .pipe(gulp.dest('./'));
 });
 
 // Default Task
