@@ -28,7 +28,7 @@
     "node_modules",
     "vendor",
     "test",
-    "tests"
+    "gulpfile.js"
   ],
   "devDependencies": {
     "labs-defaults": "git@github.com:macx/labs-defaults.git#~0.1.0"

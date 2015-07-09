@@ -15,7 +15,7 @@ to do the trick.
 
 * Highly flexible [Grid](#usage-grid) with push and pull methods based on your configuration
 * Effective [Respond-Mixin](#usage-respond) to set `@media triggers (from, to)
-* font-smoothing Mixing for better font rendering on dark backgrounds
+* font-smoothing Mixin for better font rendering on dark backgrounds
 * asset module for flexible floating objects
 * clearfix
 
@@ -35,11 +35,12 @@ Now, set your personal configuration for the Grid and import the mixins as soon 
 // Import or set here your Grid config:
 @import 'config';
 
-// macx-sass-mxing
+// macx-sass-mixin
 // (set the path to bower vendors based on your config)
-@import '<path-to>/macx-sass-mixins/src/sass-mixins';
-
+@import '[path-to]/macx-sass-mixins/src/sass-mixins';
 ```
+
+To find out the path to your Bower dependencies, type `bower list --paths` in your command line.
 
 ## Usage [usage]
 
@@ -102,7 +103,7 @@ l-u--medium-6-12
 
 ### Media Query usage [usage-respond]
 
-If you want to change the color of a box regarding the width of the viewport, you have to use media-queries. Using the respond mixing, this is much more simpler:
+If you want to change the color of a box regarding the width of the viewport, you have to use media-queries. Using the respond mixin, this is much more simpler:
 
 ```scss
 
