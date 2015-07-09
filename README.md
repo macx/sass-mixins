@@ -13,8 +13,8 @@ to do the trick.
 
 [Feature](#features)
 
-* Highly flexible [Grid](#usage-grid) with push and pull methods based on your configuration
-* Effective [Respond-Mixin](#usage-respond) to set `@media triggers (from, to)
+* Highly flexible [Grid](#grid) with push and pull methods based on your configuration
+* Effective [Respond-Mixin](#media-query-usage) to set `@media triggers (from, to)
 * font-smoothing Mixin for better font rendering on dark backgrounds
 * asset module for flexible floating objects
 * clearfix
@@ -42,9 +42,9 @@ Now, set your personal configuration for the Grid and import the mixins as soon 
 
 To find out the path to your Bower dependencies, type `bower list --paths` in your command line.
 
-## Usage [usage]
+## Usage
 
-### Grid [usage-grid]
+### Grid
 
 The Grid is simple as it could be but flexible as it should be. It's based on the following configuration. The default settings are the following:
 
@@ -101,7 +101,7 @@ l-u--medium-6-12
 
 ```
 
-### Media Query usage [usage-respond]
+### Media Query usage
 
 If you want to change the color of a box regarding the width of the viewport, you have to use media-queries. Using the respond mixin, this is much more simpler:
 
