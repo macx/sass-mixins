@@ -8,14 +8,22 @@ linters:
     space_before_bang: true
     space_after_bang: false
 
+  BemDepth:
+    enabled: false
+    max_elements: 1
+
   BorderZero:
     enabled: true
+    convention: zero # or `none`
 
   ColorKeyword:
+    enabled: true
+
+  ColorVariable:
     enabled: false
 
   Comment:
-    enabled: false
+    enabled: true
 
   DebugStatement:
     enabled: true
@@ -24,7 +32,7 @@ linters:
     enabled: false
 
   DuplicateProperty:
-    enabled: false
+    enabled: true
 
   ElsePlacement:
     enabled: true
@@ -55,13 +63,17 @@ linters:
   IdSelector:
     enabled: true
 
+  ImportantRule:
+    enabled: true
+
   ImportPath:
     enabled: true
     leading_underscore: false
     filename_extension: false
 
   Indentation:
-    enabled: false
+    enabled: true
+    allow_non_nested_indentation: false
     character: space # or 'tab'
     width: 2
 
@@ -76,7 +88,7 @@ linters:
   NameFormat:
     enabled: true
     allow_leading_underscore: true
-    convention: BEM # or 'BEM', or a regex pattern
+    convention: hyphenated_lowercase # or 'camel_case', or 'snake_case', or a regex pattern
 
   NestingDepth:
     enabled: true
@@ -85,9 +97,29 @@ linters:
   PlaceholderInExtend:
     enabled: true
 
+  PropertyCount:
+    enabled: false
+    include_nested: false
+    max_properties: 10
+
+  PropertyUnits:
+    enabled: true
+    global: [
+      'ch', 'em', 'ex', 'rem',                 # Font-relative lengths
+      'cm', 'in', 'mm', 'pc', 'pt', 'px', 'q', # Absolute lengths
+      'vh', 'vw', 'vmin', 'vmax',              # Viewport-percentage lengths
+      'deg', 'grad', 'rad', 'turn',            # Angle
+      'ms', 's',                               # Duration
+      'Hz', 'kHz',                             # Frequency
+      'dpi', 'dpcm', 'dppx',                   # Resolution
+      '%']                                     # Other
+    properties: {}
+
   PropertySortOrder:
     enabled: false
     ignore_unspecified: false
+    min_properties: 2
+    separate_groups: false
 
   PropertySpelling:
     enabled: true
@@ -104,11 +136,12 @@ linters:
     max_depth: 3
 
   SelectorFormat:
-    enabled: false
-    convention: BEM # or 'BEM', or 'snake_case', or 'camel_case', or a regex pattern
+    enabled: true
+    convention: hyphenated_BEM
 
   Shorthand:
     enabled: true
+    allowed_shorthands: [1, 2, 3]
 
   SingleLinePerProperty:
     enabled: true
@@ -129,7 +162,7 @@ linters:
 
   SpaceBeforeBrace:
     enabled: true
-    style: space
+    style: space # or 'new_line'
     allow_single_line_padding: false
 
   SpaceBetweenParens:
@@ -156,13 +189,17 @@ linters:
     enabled: true
 
   UrlQuotes:
-    enabled: true
+    enabled: false
 
-  VendorPrefixes:
+  VariableForProperty:
+    enabled: false
+    properties: []
+
+  VendorPrefix:
     enabled: true
     identifier_list: base
-    include: [-webkit-font-smoothing, -moz-osx-font-smoothing]
-    exclude: []
+    additional_identifiers: []
+    excluded_identifiers: []
 
   ZeroUnit:
     enabled: true
