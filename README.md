@@ -19,7 +19,7 @@ to do the trick.
 * asset module for flexible floating objects
 * clearfix
 
-## Installation [installation]
+## Installation
 
 Use [Bower](http://bower.io/) to download it to your project:
 
