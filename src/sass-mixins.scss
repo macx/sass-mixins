@@ -1,12 +1,12 @@
 @charset 'UTF-8';
 
 // Base
-@import '_base/config',
-        '_base/presets';
+@import '_base/config';
+@import '_base/presets';
 
 // Layout
-@import '_layout/helper',
-        '_layout/grid';
+@import '_layout/helper';
+@import '_layout/grid';
 
 // Modules
 @import '_modules/m-asset';
