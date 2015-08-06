@@ -16,7 +16,7 @@ to do the trick.
 * Highly flexible [Grid](#grid) with push and pull methods based on your configuration
 * Effective [Respond-Mixin](#media-query-usage) to set `@media triggers (from, to)
 * font-smoothing Mixin for better font rendering on dark backgrounds
-* asset module for flexible floating objects
+* [Flexible asset floating](#flexible-asset-floating)
 * clearfix
 
 ## Installation
@@ -101,24 +101,24 @@ l-u--medium-6-12
 
 ```
 
-### Media Query usage
+### Flexible asset floating
 
-If you want to change the color of a box regarding the width of the viewport, you have to use media-queries. Using the respond mixin, this is much more simpler:
+Don't write CSS for floated assets (images for example) for every size. Use this approach to align your media – no matter of assets size.
 
-```scss
+```html
+<!-- Default usage -->
+<div class="m-asset">
+  <div class="m-asset__element">
+    <img src="your-image.jpg" alt="">
+  </div>
 
-.m-box {
-  background: #f5f5f5;
+  <div class="m-asset__content">
+    This Content will always stay beside the element.
+  </div>
+</div>
 
-  @include respond('medium') {
-    // this will work from breakpoint 'medium' and above
-    background: #f00;
-  }
-
-  @include respond('large') {
-    // this will work from breakpoint 'large' and above
-    background: #0f0;
-  }
-}
-
+<!-- If you want to push the asset to the right -->
+<div class="m-asset m-asset__pushed">
+  ...
+</div>
 ```

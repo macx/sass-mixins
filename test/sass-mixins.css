@@ -500,13 +500,13 @@
 
 .m-asset {
   vertical-align: top; }
-  .m-asset .m-asset__object {
+  .m-asset .m-asset__element {
     display: inline-block;
     float: left;
     margin: .1em 1em 1em 0; }
-  .m-asset > div {
+  .m-asset .m-asset__content {
     overflow: hidden; }
 
-.m-asset--right .m-asset__object {
+.m-asset--pushed .m-asset__object {
   float: right;
   margin: .1em 0 1em 1em; }
