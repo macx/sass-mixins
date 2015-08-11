@@ -507,6 +507,6 @@
   .m-asset .m-asset__content {
     overflow: hidden; }
 
-.m-asset--pushed .m-asset__object {
+.m-asset--pushed .m-asset__element {
   float: right;
   margin: .1em 0 1em 1em; }
