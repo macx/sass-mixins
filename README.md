@@ -21,10 +21,10 @@ to do the trick.
 
 ## Installation
 
-Use [Bower](http://bower.io/) to download it to your project:
+Use [npm](https://www.npmjs.com/) to download it to your project:
 
 ```sh
-$ bower install macx-sass-mixins --save
+$ npm install macx-sass-mixins --save-dev
 ```
 
 Now, set your personal configuration for the Grid and import the mixins as soon as possible in your main Sass file:
@@ -36,8 +36,7 @@ Now, set your personal configuration for the Grid and import the mixins as soon 
 @import 'config';
 
 // macx-sass-mixin
-// (set the path to bower vendors based on your config)
-@import '[path-to]/macx-sass-mixins/src/sass-mixins';
+@import 'node_modules/macx-sass-mixins/src/sass-mixins';
 ```
 
 To find out the path to your Bower dependencies, type `bower list --paths` in your command line.

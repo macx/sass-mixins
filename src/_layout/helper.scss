@@ -5,7 +5,7 @@
 }
 
 @mixin col($col, $max-cols: 12) {
-  width: (100%/$max-cols)*$col;
+  width: (100% / $max-cols) * $col;
 }
 
 @mixin col-push($col, $max-cols: 12) {
@@ -48,7 +48,7 @@
 }
 
 @mixin clearfix() {
-  &:after {
+  &::after {
     content: '';
     display: table;
     clear: both;
