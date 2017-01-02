@@ -43,7 +43,7 @@
 // Breakpoints
 @each $breakpoint, $size in $layout-breakpoints {
   @for $i from 1 through $layout-max-columns {
-    @include respond(quote(#{$breakpoint})) {
+    @include respond(quote("#{$breakpoint}")) {
       .l-u--#{$breakpoint}-#{$i}-#{$layout-max-columns} {
         @include col($i, $layout-max-columns);
       }
